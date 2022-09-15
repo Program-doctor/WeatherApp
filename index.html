@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="src/style.css">
+    <script src="https://kit.fontawesome.com/89d1297cf4.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    
+    <section class="first-shadow">
+        <header>
+            <div class="headdescript">
+                <h1>Weather Forecast</h1>
+                <h4 id="current-date">Monday, 15th August, 2022. 12:25</h4>
+            </div>
+            <div class="searchbox">
+                <form action="" id="search-form">
+                   <div class="search-bar">
+                       <input type="search" class="shadow" placeholder="Search city here" id="city-input" autofocus="on">
+                       <i class="fa-solid fa-magnifying-glass shadow" id="click-search"></i>
+                    </div>
+                    <div id="current-position">
+                        <button type="submit" value="" id="live-loc"><span class="loc">
+                            Current Location
+                        </span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </header>
+        <main class="shadow">
+            <div class="weatherdetails ">
+                <p><span class="place style">
+
+                Uyo, NG
+                </span>
+                    <span class="style" id="temp">
+                        <strong id="c-temp">5</strong>  &deg;<a href="#" id="celc-temp">C</a></span></p>
+                <i class="fa-solid fa-cloud-moon-rain" id="icon"></i>
+                <div class="info">
+                    <p id="desc">Partly cloudy</p>
+                    <p id="humid">Humidty: 11%</p>
+                    <p id="wind">Wind: 2m/s</p>
+                </div>
+            </div>
+        </main>
+        <p class="forecastdetails">Today 5day Forecast</p>
+        <div class="forecastinfo">
+            <div class="days shadow one">
+            <h4>Monday</h4>
+            <p>Cloudy</p>
+            <span><strong class="c-temp">11</strong>&deg;C <i class="fa-solid fa-cloud"></i></span>
+            </div>
+            <div class="days shadow two">
+            <h4>Tuesday</h4>
+            <p>Cloudy</p>
+            <span>11&deg;C <i class="fa-solid fa-cloud"></i></span>
+            </div>
+            <div class="days shadow three">
+            <h4>Wednesday</h4>
+            <p>Cloudy</p>
+            <span>11&deg;C <i class="fa-solid fa-cloud"></i></span>
+            </div>
+            <div class="days shadow four">
+            <h4>Thursday</h4>
+            <p>Cloudy</p>
+            <span>11&deg;C <i class="fa-solid fa-cloud"></i></span>
+            </div>
+            <div class="days shadow" five>
+            <h4>Friday</h4>
+            <p>Cloudy</p>
+            <span>11&deg;C <i class="fa-solid fa-cloud"></i></span>
+            </div>
+        </div>
+    </section>
+    <p class="source-code">
+
+        <a href="https://github.com/Program-doctor/AllShecodesSolution" target="_blank" rel="noopener noreferrer">Open-source code</a> by Promise Sylvester
+    </p>
+    <script src="src/index.js"></script>
+</body>
+</html>
