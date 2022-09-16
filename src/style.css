@@ -147,12 +147,14 @@ main{
     align-items: center;
     justify-content: space-between;
     color:#00a;
+    margin-right: auto;
 }
 .weatherdetails{
     width: 70%;
     display: flex;
     align-items:flex-start;
     justify-content: space-between;
+    margin-right: auto;
 }
 .weatherdetails .style{
     margin-left: 10px;
@@ -209,6 +211,37 @@ section .forecastdetails{
     word-spacing: 15px;
 
 }
+.first-shadow{
+    box-shadow: 
+    inset 5px 5px 5px rgba(0,0,0,.05),
+    inset -5px -5px 5px rgba(225,225,225,.5),
+    5px 5px 5px rgba(0,0,0,.05),
+    -5px -5px 5px rgba(225,225,225,.5)
+    ;
+    border-radius: 10px;
+}
+.shadow{
+    background:#e5e5e5;
+    border-radius: 10px;
+    box-shadow: 
+    0 10px 6px -6px #777
+    ;
+}
+#celc-temp,#fahr-temp{
+    text-decoration: none;
+}
+#celc-temp:focus,#fahr-temp:focus{
+    color: red;
+    text-decoration: underline;
+}
+.source-code{
+    color: #33333398;
+}
+#icon{
+    width: 100px;
+    height: 100px;
+    align-self: center;
+}
 @media (max-width:693px){
     section{
         margin-top: 0;
@@ -239,29 +272,6 @@ main {
     padding-right: 20px;
   }
 }
-.first-shadow{
-    box-shadow: 
-    inset 5px 5px 5px rgba(0,0,0,.05),
-    inset -5px -5px 5px rgba(225,225,225,.5),
-    5px 5px 5px rgba(0,0,0,.05),
-    -5px -5px 5px rgba(225,225,225,.5)
-    ;
-    border-radius: 10px;
-}
-.shadow{
-    background:#e5e5e5;
-    border-radius: 10px;
-    box-shadow: 
-    0 10px 6px -6px #777
-    ;
-}
-#celc-temp,#fahr-temp{
-    text-decoration: none;
-}
-#celc-temp:focus,#fahr-temp:focus{
-    color: red;
-    text-decoration: underline;
-}
 @media (max-width:612px) {
     #search-form{
         align-items:flex-start;
@@ -273,7 +283,7 @@ main {
     .info{
         padding-right: 20px;
     }
-}
-.source-code{
-    color: #33333398;
+    #icon{
+        margin-right: 20px;
+    }
 }

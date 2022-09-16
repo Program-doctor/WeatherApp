@@ -1,5 +1,5 @@
-let now= new Date();
-function dates(){
+function formatDate(timestamp){
+  let now= new Date(timestamp);
     let days=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
     let day=days[now.getDay()];
     let date=now.getDate();
@@ -8,17 +8,16 @@ function dates(){
     let year=now.getFullYear();
     let hour=now.getHours();
     if (hour < 10) {
-        hour = `0${hour}`;
-      }
+      hour = `0${hour}`;
+    }
     let minutes=now.getMinutes();
     if (minutes < 10) {
-        minutes = `0${minutes}`;
-      }
+      minutes = `0${minutes}`;
+    }
     let h4=document.querySelector("#current-date");
-    h4.innerHTML=`${day}, ${date}th ${month}, ${year}. ${hour}:${minutes}`;
+    h4.innerHTML=`Last updated: ${day}, ${date}th ${month}, ${year}. ${hour}:${minutes}`;
 }
-dates();
-// // let temperature=(Math.round(Math.random()*100));
+ // let temperature=(Math.round(Math.random()*100));
 // function displayCity(){
 //     let input=document.querySelector("#city-input").value;
 //     let firstLetter=input[0].toUpperCase();
@@ -89,9 +88,10 @@ function searchCity(city) {
       desc(response);
       humid(response);
       wind(response);
+      formatDate(response.data.dt*1000)
+      icon(response);
     //   displayCelc(response);
       //  displayFahr(response);
-    console.log(response.data.wind.speed);
 }
 function place(response){
     let name=response.data.name;
@@ -126,6 +126,12 @@ function desc(response){
     let windValue=Math.round(response.data.wind.speed);
     let windElement=document.querySelector("#wind");
     windElement.innerHTML=`Wind: ${windValue}m/s`;
+  }
+  function icon(response){
+    let iconValue=response.data.weather[0].icon;
+    let iconElement=document.querySelector("#icon");
+    iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${iconValue}@2x.png`);
+    iconElement.setAttribute("alt", response.data.weather[0].main);
   }
 
   function showPosition(position){
