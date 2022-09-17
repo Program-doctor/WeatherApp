@@ -17,34 +17,6 @@ function formatDate(timestamp){
     let h4=document.querySelector("#current-date");
     h4.innerHTML=`Last updated: ${day}, ${date}th ${month}, ${year}. ${hour}:${minutes}`;
 }
- // let temperature=(Math.round(Math.random()*100));
-// function displayCity(){
-//     let input=document.querySelector("#city-input").value;
-//     let firstLetter=input[0].toUpperCase();
-//     let otherLetters=input.slice(1,input.length).toLowerCase();
-//     let inputCity=firstLetter+otherLetters;
-//     let place=document.querySelector(".place");
-//     if(input){
-//         place.innerHTML=inputCity;
-//     }
-//     else{
-//         place.innerHTML=null;
-//         alert(`You have not entered a city yet. Please enter a city😊`);
-//     }
-// }
-// let showCity=document.querySelector("#click-search");
-// showCity.addEventListener("click",displayCity);
-
-// function displayTemp(){
-//     let span=document.querySelector("#c-temp");
-//     span.innerHTML=temperature;
-//     let monday=document.querySelector(".c-temp");
-//     monday.innerHTML=temperature;
-// }
-// let showTemp=document.querySelector("#click-search");
-// showTemp.addEventListener("click",displayTemp)
-
-
 
 function searchCity(city) {
     let apiKey = "f5984f7bc966396e1be817c3ac20863d";
