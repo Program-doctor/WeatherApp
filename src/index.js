@@ -65,22 +65,6 @@ function searchCity(city) {
       enter.addEventListener("click",search);
   }
   click();
-  //   function displayCelc(response){
-  //       let celcTemp=Math.round(response.data.main.temp);
-  //     let celcius=document.querySelector("#c-temp");
-  //      celcius.innerHTML=`${celcTemp}`;
-  //  }
-  //  let celcDisplay=document.querySelector("#celc-temp");
-  //  celcDisplay.addEventListener("click",displayCelc);
-  
-  //  function displayFahr(response){
-  //      let fahrTemp=Math.round(response.data.main.temp);
-  //      let fahrenheit=document.querySelector("strong#c-temp");
-  //      let fahrValue=Math.round((fahrTemp*(9/5)+32));
-  //      fahrenheit.innerHTML=fahrValue;
-  //  }
-  //  let fahrDisplay=document.querySelector("#fahr-temp");
-  //  fahrDisplay.addEventListener("click",showUserData);
   
   function showUserData(response){
       place(response);
@@ -90,8 +74,7 @@ function searchCity(city) {
       wind(response);
       formatDate(response.data.dt*1000)
       icon(response);
-    //   displayCelc(response);
-      //  displayFahr(response);
+      initialTemp=response.data.main.temp;
 }
 function place(response){
     let name=response.data.name;
@@ -146,5 +129,25 @@ function desc(response){
   }
   let button=document.querySelector("#live-loc");
   button.addEventListener("click",getCurrentPosition);
+  let initialTemp=null;
+  function displayFahr(event){
+    event.preventDefault();
+         let fahrenheit=document.querySelector("strong#c-temp");
+         let fahrValue=Math.round((initialTemp*(9/5)+32));
+         fahrenheit.innerHTML=fahrValue;
+         celcLink.classList.remove("active");
+         fahrLink.classList.add("active");
+     }
+     let fahrLink=document.querySelector("#fahr-temp");
+     fahrLink.addEventListener("click", displayFahr);
 
+  function displayCelc(event){
+    event.preventDefault();
+         let celcius=document.querySelector("strong#c-temp");
+         celcius.innerHTML=Math.round(initialTemp);
+         celcLink.classList.add("active");
+         fahrLink.classList.remove("active");
+     }
+     let celcLink=document.querySelector("#celc-temp");
+     celcLink.addEventListener("click", displayCelc);
   

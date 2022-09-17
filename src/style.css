@@ -242,6 +242,33 @@ section .forecastdetails{
     height: 100px;
     align-self: center;
 }
+strong#c-temp{
+    font-size: 2em;
+    font-weight: 400;
+}
+#c-temp{
+    line-height: 1;
+    font-size: 64px;
+    font-weight: 400;
+}
+#temp .pow{
+    position:relative;
+    font-size: 16px;
+    top: -58px;
+    left: 30px;
+    transform: translate(1%,10%);
+}
+#temp .active{
+    color: var(--black);
+    cursor: default;
+    text-decoration: none;
+}
+#temp .active:hover{
+    text-decoration: none;
+}
+.info{
+    align-self: center;
+}
 @media (max-width:693px){
     section{
         margin-top: 0;
@@ -285,5 +312,8 @@ main {
     }
     #icon{
         margin-right: 20px;
+    }
+    .weatherdetails p{
+        margin-right: 15px;
     }
 }
