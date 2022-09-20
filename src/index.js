@@ -47,7 +47,8 @@ function searchCity(city) {
       formatDate(response.data.dt*1000)
       icon(response);
       initialTemp=response.data.main.temp;
-}
+      getForecast(response.data.coord);
+     }
 function place(response){
     let name=response.data.name;
     if(name){
@@ -122,4 +123,37 @@ function desc(response){
      }
      let celcLink=document.querySelector("#celc-temp");
      celcLink.addEventListener("click", displayCelc);
-  
+
+
+
+     function displayForecast(response){
+       let forecast=response.data.daily;
+      let forecastElement=document.querySelector("#forecast");
+      let forecastHTML=`<div class="forecastinfo">`;
+      forecast.forEach(function(forecastDay,index){
+        if (index<5){
+      forecastHTML=forecastHTML + `<div class="days shadow one">
+      <h4>${formatDay(forecastDay.dt)}</h4>
+      <p class="forecast-description">${forecastDay.weather[0].description}</p>
+      <div class="tempImg">
+      <div class="grid"><span><strong class="c-temp">${Math.round(forecastDay.temp.max)}</strong>&deg;C</span><span id="min-temp"> ${Math.round(forecastDay.temp.min)}&deg;C</span></div>
+      <img id="icons" src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42"   />
+      </div>
+      </div>`;
+    }
+      });
+      forecastHTML=forecastHTML + `<\div>`;
+      forecastElement.innerHTML=forecastHTML;
+      console.log(response.data.daily);
+     }
+     function getForecast(coordinates){
+       let apiKey="b9ba0314a93083136d968577c718e31d";
+       let apiUrl=`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+       axios.get(apiUrl).then(displayForecast);
+     }
+     function formatDay(timestamp){
+       let date=new Date(timestamp*1000);
+       let day=date.getDay();
+       let days=["Sunday","Monday","Tuesday", "Wednesday","Thursday","Friday","Saturday"];
+       return days[day];
+     }

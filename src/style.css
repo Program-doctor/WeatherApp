@@ -180,21 +180,22 @@ section .forecastdetails{
 }
 .forecastinfo{
     display: flex;
-    align-items: flex-start;
-    justify-content: flex-start;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     width: 90%;
 }
-.days{
+.days{position: relative;
     color:#00a;
     border: 1px solid deepskyblue;
-    padding: 5px 25px;
-    align-items: flex-start;
-    justify-content: flex-start;
-    /* max-width: 100px; */
-    flex-wrap: wrap;
+    padding-top: 10px;
+    padding-left: 35px;
+    display: grid;
+    grid-template-rows: repeat(3, auto);
     margin-top: 20px;
     margin-right: 30px;
+    text-align: left;
 }
 .days h4{
  margin-top: 0;
@@ -235,7 +236,14 @@ section .forecastdetails{
     text-decoration: underline;
 }
 .source-code{
+    position: relative;
     color: #33333398;
+    align-self: flex-start;
+    left: 2.1%;
+    translate: transformY(-3%);
+}
+.source-code a{
+ text-decoration: none;   
 }
 #icon{
     width: 100px;
@@ -254,7 +262,7 @@ strong#c-temp{
 #temp .pow{
     position:relative;
     font-size: 16px;
-    top: -58px;
+    top: -59px;
     left: 30px;
     transform: translate(1%,10%);
 }
@@ -275,7 +283,6 @@ strong#c-temp{
     }
 header .headdescript h1{
     font-size:2em;
-    /* margin-right: 40px; */
     width: 100%;
     justify-content: space-between;
 }
@@ -316,4 +323,16 @@ main {
     .weatherdetails p{
         margin-right: 15px;
     }
+}
+#icons{position: relative;
+top: 20%;
+left: -30px;
+width: 70%;
+}
+#min-temp{
+    opacity: 0.7;
+    margin-left: -15px;
+}
+.forecast-description::first-letter{
+    text-transform: uppercase;
 }

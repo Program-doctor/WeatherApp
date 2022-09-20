@@ -8,10 +8,11 @@
     <link rel="stylesheet" href="src/style.css">
     <script src="https://kit.fontawesome.com/89d1297cf4.js" crossorigin="anonymous"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    
 </head>
 <body>
     
-    <section class="first-shadow">
+    <section class="container first-shadow">
         <header>
             <div class="headdescript">
                 <h1>Weather Forecast</h1>
@@ -33,7 +34,7 @@
             </div>
         </header>
         <main class="shadow">
-            <div class="weatherdetails ">
+            <div class="  weatherdetails ">
                 <p><span class="place style">
 
                 Uyo, NG
@@ -41,8 +42,8 @@
                     <span class="style" id="temp">
                         <strong id="c-temp">5</strong><span class="pow"> &deg;<a href="#" id="celc-temp" class="active">C</a> |
                         <a href="" id="fahr-temp">&deg;F</a> </span></span></p>
-                <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="Desc" id="icon"/>
-                <div class="info">
+                <img src="https://openweathermap.org/img/wn/04d@2x.png" alt="Desc" id="icon" class=""/>
+                <div class="info" class="">
                     <p id="desc">Partly cloudy</p>
                     <p id="humid">Humidty: 11%</p>
                     <p id="wind">Wind: 2m/s</p>
@@ -50,33 +51,11 @@
             </div>
         </main>
         <p class="forecastdetails">Today 5day Forecast</p>
-        <div class="forecastinfo">
-            <div class="days shadow one">
-            <h4>Monday</h4>
-            <p>Cloudy</p>
-            <span><strong class="c-temp">11</strong>&deg;C <i class="fa-solid fa-cloud"></i></span>
-            </div>
-            <div class="days shadow two">
-            <h4>Tuesday</h4>
-            <p>Cloudy</p>
-            <span>11&deg;C <i class="fa-solid fa-cloud"></i></span>
-            </div>
-            <div class="days shadow three">
-            <h4>Wednesday</h4>
-            <p>Cloudy</p>
-            <span>11&deg;C <i class="fa-solid fa-cloud"></i></span>
-            </div>
-            <div class="days shadow four">
-            <h4>Thursday</h4>
-            <p>Cloudy</p>
-            <span>11&deg;C <i class="fa-solid fa-cloud"></i></span>
-            </div>
-            <div class="days shadow" five>
-            <h4>Friday</h4>
-            <p>Cloudy</p>
-            <span>11&deg;C <i class="fa-solid fa-cloud"></i></span>
-            </div>
+        <div id="forecast">
+
         </div>
+
+
     </section>
     <p class="source-code">
 
