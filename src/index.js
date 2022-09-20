@@ -136,7 +136,7 @@ function desc(response){
       <h4>${formatDay(forecastDay.dt)}</h4>
       <p class="forecast-description">${forecastDay.weather[0].description}</p>
       <div class="tempImg">
-      <div class="grid"><span><strong class="c-temp">${Math.round(forecastDay.temp.max)}</strong>&deg;C</span><span id="min-temp"> ${Math.round(forecastDay.temp.min)}&deg;C</span></div>
+      <div class="grid"><span><strong class="c-temp">${Math.round(forecastDay.temp.max)}</strong>&deg;</span><span id="min-temp"> ${Math.round(forecastDay.temp.min)}&deg;</span></div>
       <img id="icons" src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" alt="" width="42"   />
       </div>
       </div>`;
