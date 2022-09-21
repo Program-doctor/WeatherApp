@@ -150,11 +150,10 @@ main{
     margin-right: auto;
 }
 .weatherdetails{
+    display: grid;
     width: 70%;
-    display: flex;
-    align-items:flex-start;
-    justify-content: space-between;
-    margin-right: auto;
+    grid-template-columns: repeat(3, minmax(70px, auto));
+    grid-gap: 40px;
 }
 .weatherdetails .style{
     margin-left: 10px;
@@ -193,6 +192,7 @@ section .forecastdetails{
     padding-left: 35px;
     display: grid;
     grid-template-rows: repeat(3, auto);
+    grid-template-columns:minmax(100px,auto) ;
     margin-top: 20px;
     margin-right: 30px;
     text-align: left;

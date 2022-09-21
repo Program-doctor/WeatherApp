@@ -15,7 +15,7 @@ function formatDate(timestamp){
       minutes = `0${minutes}`;
     }
     let h4=document.querySelector("#current-date");
-    h4.innerHTML=`Last updated: ${day}, ${date}th ${month}, ${year}. ${hour}:${minutes}`;
+    h4.innerHTML=`Last updated: ${day}, ${date} ${month}, ${year}. ${hour}:${minutes}`;
 }
 
 function searchCity(city) {
@@ -144,7 +144,6 @@ function desc(response){
       });
       forecastHTML=forecastHTML + `<\div>`;
       forecastElement.innerHTML=forecastHTML;
-      console.log(response.data.daily);
      }
      function getForecast(coordinates){
        let apiKey="b9ba0314a93083136d968577c718e31d";
