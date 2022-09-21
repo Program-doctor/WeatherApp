@@ -154,13 +154,7 @@ main{
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
 }
-@media (max-width:519px) {
-    .weatherdetails{
-        display: grid;
-        grid-template-columns: 100px 100px 1fr;
-        grid-gap: 10px;
-    }
-}
+
 .weatherdetails .style{
     margin-left: 10px;
     font-weight: bold;
@@ -195,10 +189,10 @@ section .forecastdetails{
     color:#00a;
     border: 1px solid deepskyblue;
     padding-top: 10px;
-    padding-left: 35px;
+    padding-left: 50px;
     display: grid;
     grid-template-rows: repeat(3, auto);
-    grid-template-columns:minmax(100px,auto) ;
+    grid-template-columns:minmax(50px,auto) ;
     margin-top: 20px;
     margin-right: 30px;
     text-align: left;
@@ -283,6 +277,18 @@ strong#c-temp{
 .info{
     align-self: center;
 }
+#icons{position: relative;
+    top: 20%;
+    left: -30px;
+    width: 70%;
+    }
+    #min-temp{
+        opacity: 0.7;
+        margin-left: -15px;
+    }
+    .forecast-description::first-letter{
+        text-transform: uppercase;
+    }
 @media (max-width:693px){
     section{
         margin-top: 0;
@@ -330,15 +336,10 @@ main {
         margin-right: 15px;
     }
 }
-#icons{position: relative;
-top: 20%;
-left: -30px;
-width: 70%;
-}
-#min-temp{
-    opacity: 0.7;
-    margin-left: -15px;
-}
-.forecast-description::first-letter{
-    text-transform: uppercase;
+@media (max-width:519px) {
+    .weatherdetails{
+        display: grid;
+        grid-template-columns: 100px 100px 1fr;
+        grid-gap: 10px;
+    }
 }
