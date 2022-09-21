@@ -151,9 +151,15 @@ main{
 }
 .weatherdetails{
     display: grid;
-    width: 70%;
-    grid-template-columns: repeat(3, minmax(70px, auto));
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 40px;
+}
+@media (max-width:519px) {
+    .weatherdetails{
+        display: grid;
+        grid-template-columns: 100px 100px 1fr;
+        grid-gap: 10px;
+    }
 }
 .weatherdetails .style{
     margin-left: 10px;
