@@ -240,7 +240,7 @@ section .forecastdetails{
 }
 .source-code{
     position: relative;
-    color: #33333398;
+    color: #ffffff98;
     align-self: flex-start;
     left: 2.1%;
     translate: transformY(-3%);
