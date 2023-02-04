@@ -9,7 +9,10 @@ body{
     align-items: center;
     display: flex;
     box-sizing: border-box;
-   
+    background-image: url('./img/chuttersnap-9AqIdzEc9pY-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position:100% 100%;
+    background-size: cover;
 }
 section{
     position: relative;
